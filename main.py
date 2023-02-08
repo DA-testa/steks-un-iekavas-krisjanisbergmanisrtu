@@ -19,18 +19,24 @@ def find_mismatch(text):
         if next in ")]}":
             # Process closing bracket, write your code here
             # Check for empty or invalid
-            if len(opening_brackets_stack) == 0 or not (are_matching(opening_brackets_stack[-1].char, next)):
+            if not (len(opening_brackets_stack)):
+                print("len = 0")
+
+            if not (are_matching(opening_brackets_stack[-1].char, next)):
+                print(opening_brackets_stack[-1].char + " is not " + next)
+
+            if not (len(opening_brackets_stack)) or not (are_matching(opening_brackets_stack[-1].char, next)):
                 print(i + 1)
-                exit()
+            exit()
             else:
-                opening_brackets_stack.pop()
+            opening_brackets_stack.pop()
     return opening_brackets_stack
 
 
 def main():
     text = input()
     if text == "F":
-        file = open("./test/1", "r")
+        file = open("./test/0", "r")
         text = file.read()
     elif text == "I":
         text = input()
@@ -42,6 +48,6 @@ def main():
     else:
         print(mismatch[-1].position)
 
-# Temp comment
+
 if __name__ == "__main__":
     main()
