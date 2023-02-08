@@ -45,6 +45,7 @@ def main():
     mismatch = find_mismatch(text)
     # Printing answer, write your code here
     if len(mismatch) == 0:
+        print(text)
         print("Success")
     else:
         print(mismatch[-1].position)
