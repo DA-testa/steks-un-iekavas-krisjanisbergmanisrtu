@@ -19,14 +19,7 @@ def find_mismatch(text):
         if next in ")]}":
             # Process closing bracket, write your code here
             # Check for empty or invalid
-            if not (len(opening_brackets_stack)):
-                print("len = 0")
-
-            if not (are_matching(opening_brackets_stack[-1].char, next)):
-                print(opening_brackets_stack[-1].char + " is not " + next)
-                pass
-
-            if not (len(opening_brackets_stack)) or not (are_matching(opening_brackets_stack[-1].char, next)):
+            if len(opening_brackets_stack) == 0 or not (are_matching(opening_brackets_stack[-1].char, next)):
                 print(i + 1)
                 exit()
             else:
@@ -46,7 +39,7 @@ def main():
     # Printing answer, write your code here
     if len(mismatch) == 0:
         print(text)
-        print("Success")
+        # print("Success")
     else:
         print(mismatch[-1].position)
 
