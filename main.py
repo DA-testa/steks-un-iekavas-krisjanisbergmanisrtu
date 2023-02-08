@@ -24,12 +24,13 @@ def find_mismatch(text):
 
             if not (are_matching(opening_brackets_stack[-1].char, next)):
                 print(opening_brackets_stack[-1].char + " is not " + next)
+                pass
 
             if not (len(opening_brackets_stack)) or not (are_matching(opening_brackets_stack[-1].char, next)):
                 print(i + 1)
-            exit()
+                exit()
             else:
-            opening_brackets_stack.pop()
+                opening_brackets_stack.pop()
     return opening_brackets_stack
 
 
