@@ -30,7 +30,7 @@ def find_mismatch(text):
 def main():
     text = input()
     if text == "F":
-        file = open("./test/0", "r")
+        file = open("./test/5", "r")
         text = file.read()
     elif text == "I":
         text = input()
@@ -38,8 +38,7 @@ def main():
     mismatch = find_mismatch(text)
     # Printing answer, write your code here
     if len(mismatch) == 0:
-        print(text)
-        # print("Success")
+        print("Success")
     else:
         print(mismatch[-1].position)
 
